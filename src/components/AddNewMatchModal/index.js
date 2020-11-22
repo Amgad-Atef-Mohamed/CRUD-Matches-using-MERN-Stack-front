@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { Flex, Box } from '@rebass/grid';
-import moment from 'moment';
 import styled from 'styled-components';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import {
