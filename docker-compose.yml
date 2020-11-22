@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  front-nginx:
+    image: nginx:mainline-alpine
+    container_name: front-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./config/nginx-conf:/etc/nginx/conf.d
+      - ./config/ssl:/etc/ssl
+      - ./build:/usr/share/nginx/html
+    networks:
+      - front-fanni
+networks:
+  front-fanni:
+    driver: "bridge"
